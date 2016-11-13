@@ -9,12 +9,15 @@ body {
     background: #fff;
 }
 
+#screen {
+    height: 100%;
+}
+
 #screen, .tab-bar {
     max-width: calc(750px * 2 / 3);
     background: #eee;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
@@ -64,10 +67,70 @@ body {
     color: #fff;
 }
 
-.search-bar::-webkit-input-placeholder,
-.search-bar::-moz-placeholder {
+.search-bar::-webkit-input-placeholder {
     color: #fff;
     text-align: center;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.hero {
+    width: 100%;
+    position: relative;
+    background: url("images/hero-bg.jpg") no-repeat;
+    background-size: 100%;
+    min-height: 2px;
+    margin: 0;
+    padding: 0;
+    height: calc(294px * 2 / 3);
+}
+
+.hero:before {
+    content: '';
+    padding-bottom: 39.2%;
+    display: block;
+    position: absolute;
+    background-color: rgb(18, 160, 234);
+}
+
+.banner {
+    background: url("images/checkin-bg.png") no-repeat;
+    background-size: 100%;
+    width: 100%;
+    position: relative;
+    height: calc(142px * 2 / 3);
+}
+
+.banner .more {
+    text-decoration: underline;
+    color: #fff;
+    position: absolute;
+    left: 28px;
+    top: 5px;
+    display: block;
+}
+
+.banner .more:after {
+    content: ' >';
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.check-in {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.check-in > span {
+    display: block;
 }
 
 .tab-bar {
@@ -76,6 +139,7 @@ body {
     background: #fff;
     height: calc(94px * 2 / 3);
     text-align: center;
+    justify-content: center;
     border-top: 1px solid rgba(20, 20, 20, .9);
 }
 
@@ -100,6 +164,10 @@ body {
 
 .fixed {
     position: fixed;
+}
+
+.absolute {
+    position: absolute;
 }
 
 .bottom-pos {
