@@ -15,7 +15,7 @@ body {
 
 #screen, .tab-bar {
     max-width: calc(750px * 2 / 3);
-    background: #eee;
+    background: rgb(238, 238, 238);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,6 +78,10 @@ body {
     flex-direction: column;
     align-items: center;
     flex: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 1;
+    margin-bottom: 63.66px;
 }
 
 .hero {
@@ -125,12 +129,100 @@ body {
 .check-in {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
+    z-index: 2;
 }
 
 .check-in > span {
     display: block;
+    font-size: calc(72px * 2 / 3);
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: rgb(211,36,36);
+}
+
+.details {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.details .today, .details .suffix {
+    color: #fff;
+    font-size: calc(34px * 2 / 3);
+    font-weight: 300;
+}
+
+.details .today {
+    padding-right: 100px;
+}
+
+.details .suffix {
+    transform: translateX(20px);
+}
+
+.check-in-button {
+    background: url("images/checkin-button.png") no-repeat;
+    background-size: 100%;
+    width: 90px;
+    height: 90px;
+    margin: 0;
+    transform: translateX(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.check-in-button span {
+    font-size: calc(34px * 2 / 3);
+    color: rgb(211, 36, 36);
+}
+
+.guide {
+    margin: calc(22px * 2 / 3) 0;
+    width: 100%;
+    height: calc(96px * 2 / 3);
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid rgb(18, 160, 234);
+    text-align: center;
+}
+
+.guide-item {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+}
+
+.guide-item > span {
+    font-size: 18px;
+    transform: translateY(3px);
+    display: block;
+}
+
+.guide-item i {
+    color: rgb(18, 160, 234);
+}
+
+.guide-item.selected:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: calc(-100% - 5px);
+    border-top: 13px solid rgb(18, 160, 234);
+    width: 100%;
 }
 
 .tab-bar {
@@ -141,25 +233,30 @@ body {
     text-align: center;
     justify-content: center;
     border-top: 1px solid rgba(20, 20, 20, .9);
+    z-index: 99;
 }
 
 .tab-item {
     flex: 1;
-
+    cursor: pointer;
 }
 
 .tab-item > * {
-    display: inline-block;
+    display: block;
+    color: rgb(105, 105, 105);
 }
 
 .tab-item span {
     margin-top: 3px;
     font-size: calc(22px * 2 / 3);
-    color: rgb(105, 105, 105);
 }
 
-.tab-item.selected span {
+.tab-item.selected span, .tab-item.selected i {
     color: rgb(18, 160, 234);
+}
+
+.tab-item i {
+    font-size: 32px;
 }
 
 .fixed {
@@ -173,11 +270,4 @@ body {
 .bottom-pos {
     bottom: 0;
     width: 100%;
-}
-
-.icon.home {
-    content: '';
-    display: block;
-    width: 25px;
-    height: 25px;
 }

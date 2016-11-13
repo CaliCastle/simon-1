@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
 
@@ -24,31 +25,49 @@
         <section class="banner">
             <a href="#" class="more">了解更多</a>
             <div class="check-in">
-                <span class="today">07月21日</span>
                 <span class="streak">05</span>
+            </div>
+            <div class="details">
+                <span class="today">07月21日</span>
                 <span class="suffix">天</span>
-                <figure class="check-in-button"></figure>
+                <figure class="check-in-button">
+                    <span>签到</span>
+                </figure>
             </div>
         </section>
+        <nav class="guide">
+            <div class="guide-item selected">
+                <span>通知公告 <i class="fa fa-bullhorn"></i></span>
+            </div>
+            <div class="guide-item">
+                <span>通知公告 <i class="fa fa-bullhorn"></i></span>
+            </div>
+            <div class="guide-item">
+                <span>通知公告 <i class="fa fa-bullhorn"></i></span>
+            </div>
+            <div class="guide-item">
+                <span>通知公告 <i class="fa fa-bullhorn"></i></span>
+            </div>
+        </nav>
+        <section class="table">
 
+        </section>
     </section>
     <nav class="tab-bar absolute bottom-pos">
         <div class="tab-item selected">
-            <svg class="icon home">
-                <use xlink:href="#home"></use>
-            </svg>
+            <i class="fa fa-home"></i>
             <span>首页</span>
         </div>
         <div class="tab-item">
-            <i class="icon"></i>
+            <i class="fa fa-star-o"></i>
             <span>业务处理</span>
         </div>
         <div class="tab-item">
-            <i class="icon"></i>
+            <i class="fa fa-info"></i>
             <span>信息查询</span>
         </div>
         <div class="tab-item">
-            <i class="icon"></i>
+            <i class="fa fa-user-o"></i>
             <span>个人中心</span>
         </div>
     </nav>
